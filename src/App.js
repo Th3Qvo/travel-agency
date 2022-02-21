@@ -11,12 +11,14 @@ import Trips from './components/views/Trips/TripsContainer';
 import Regions from './components/views/Regions/RegionsContainer';
 import Trip from './components/views/Trip/TripContainer';
 import Country from './components/views/Country/CountryContainer';
-
 import Info from './components/views/Info/Info';
 import NotFound from './components/views/NotFound/NotFound';
 
 import parseTrips from './utils/parseTrips';
 import { setMultipleStates } from './redux/globalRedux';
+
+import styles from './App.scss';
+import { AnimatedSwitch } from 'react-router-transition';
 
 class App extends React.Component {
   static propTypes = {
@@ -41,7 +43,12 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <MainLayout>
-          <Switch>
+          <AnimatedSwitch
+            atEnter={{ opacity: 1 }}
+            atLeave={{ opacity: 0 }}
+            atActive={{ opacity: 1 }}
+            className={styles.switchWrapper}
+          >
             <Route exact path='/' component={Home} />
             <Route exact path='/trips' component={Trips} />
             <Route exact path='/countries' component={Countries} />
@@ -50,7 +57,7 @@ class App extends React.Component {
             <Route exact path='/country/:id' component={Country} />
             <Route exact path='/info' component={Info} />
             <Route path='*' component={NotFound} />
-          </Switch>
+          </AnimatedSwitch>
         </MainLayout>
       </BrowserRouter>
     );
