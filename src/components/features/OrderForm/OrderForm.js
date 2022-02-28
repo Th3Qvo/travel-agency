@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import OrderSummary from '../OrderSummary/OrderSummary';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import pricing from '../../../data/pricing.json';
 import OrderOption from '../OrderOption/OrderOption';
 
@@ -20,9 +20,14 @@ const OrderForm = ({ tripCost, options, setOrderOption }) => {
   );
 }
 
-// OrderForm.propTypes = {
-//   cost: PropTypes.string,
-//   options: PropTypes.object,
-// };
+OrderForm.propTypes = {
+  cost: PropTypes.string,
+  countryName: PropTypes.string,
+  options: PropTypes.object,
+  setOrderOption: PropTypes.func,
+  tripId: PropTypes.string,
+  tripName: PropTypes.string,
+  tripCost: PropTypes.string,
+};
 
 export default OrderForm;
