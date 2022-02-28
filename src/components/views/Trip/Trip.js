@@ -40,7 +40,14 @@ const Trip = ({ error, name, image, cost, days, description, country, intro }) =
           </Row>
         </Grid>
       </DetailsBox>
-      <OrderForm />
+      <Grid>
+        <Row>
+          <Col xs={12}>
+            <PageTitle text='Trip options' />
+            <OrderForm tripCost={cost} />
+          </Col>
+        </Row>
+      </Grid>
       <Grid>
         <Row>
           <Col xs={12}>
@@ -79,6 +86,7 @@ Trip.propTypes = {
   days: PropTypes.number,
   description: PropTypes.string,
   country: PropTypes.object,
+  tripCost: PropTypes.node,
 };
 
 export default Trip;
