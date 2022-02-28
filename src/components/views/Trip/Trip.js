@@ -12,10 +12,11 @@ import List from '../../common/List/List';
 import ListItem from '../../common/ListItem/ListItem';
 
 import styles from './Trip.module.scss';
-import {Grid, Row, Col} from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+import OrderForm from '../../features/OrderForm/OrderForm';
 
-const Trip = ({error, name, image, cost, days, description, country, intro}) => {
-  if(error) return <NotFound />;
+const Trip = ({ error, name, image, cost, days, description, country, intro }) => {
+  if (error) return <NotFound />;
   else return (
     <Section>
       <Grid>
@@ -39,6 +40,7 @@ const Trip = ({error, name, image, cost, days, description, country, intro}) => 
           </Row>
         </Grid>
       </DetailsBox>
+      <OrderForm />
       <Grid>
         <Row>
           <Col xs={12}>
