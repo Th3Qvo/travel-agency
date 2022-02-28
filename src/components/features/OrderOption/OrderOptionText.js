@@ -10,9 +10,8 @@ const OrderOptionText = ({ setOptionValue, currentValue }) => {
       value={currentValue}
       className={styles.input}
       onChange={event => setOptionValue(event.currentTarget.value)}
-      placeholder='enter text'
+      placeholder='...'
     />
-
   );
 };
 
